@@ -3,15 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MGB 301 Test 3 Cheat Sheet - Zero Gaps</title>
+    <title>MGB 301 Test 3 Cheat Sheet - Print Fixed</title>
     <style>
         /* Print-specific layout */
         @page {
             size: letter portrait;
-            margin: 0.25in;
+            margin: 0.2in; /* Slightly smaller margin to give more breathing room */
         }
 
-        * { box-sizing: border-box; }
+        * { 
+            box-sizing: border-box; 
+            /* CRITICAL: Forces the browser to print the black backgrounds and yellow highlights */
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
         
         body {
             background-color: #525659;
@@ -28,20 +33,20 @@
             background-color: white;
             width: 8.5in;
             height: 11in;
-            padding: 0.25in;
+            padding: 0.2in;
             box-shadow: 0 5px 15px rgba(0,0,0,0.5);
             overflow: hidden;
         }
 
         /* Text and Layout Styling */
         .page-content {
-            font-size: 6.5pt; /* Ultra-dense base font */
-            line-height: 1.05;
+            font-size: 6.5pt; 
+            line-height: 1.02; /* Tightened slightly to prevent spillover */
         }
         .header-title {
             text-align: center;
             font-size: 10pt;
-            margin: 0 0 4px 0;
+            margin: 0 0 3px 0;
             padding-bottom: 2px;
             border-bottom: 1.5px solid #000;
             text-transform: uppercase;
@@ -52,15 +57,15 @@
         .content-columns {
             column-count: 4; 
             column-gap: 0.15in; 
-            height: 10.4in; /* Forces columns to fill available height */
-            column-fill: auto; /* CRITICAL: Kills the giant white space gaps */
+            height: 10.1in; /* Reduced slightly from 10.4in to fit perfectly on 1 page */
+            column-fill: auto; 
             text-align: left; 
         }
 
         /* Section & Element Styling */
         section {
-            margin-bottom: 4px;
-            break-inside: avoid; /* Keeps sections grouped together safely now */
+            margin-bottom: 3px;
+            break-inside: avoid; 
         }
         
         h2, h3 {
@@ -70,8 +75,8 @@
 
         h2 {
             font-size: 7.5pt;
-            background: #222;
-            color: white;
+            background: #222 !important; /* Forced background color */
+            color: white !important; /* Forced text color */
             padding: 2px 3px;
             margin: 0 0 2px 0;
             text-align: center;
@@ -80,34 +85,30 @@
         
         h3 {
             font-size: 7pt;
-            margin: 3px 0 1px 0;
+            margin: 2px 0 1px 0;
             border-bottom: 1px solid #eee;
-            color: #b71c1c;
+            color: #b71c1c !important; /* Forced text color */
         }
         
-        p { 
-            margin: 1px 0 2px 0; 
-        }
+        p { margin: 1px 0 1.5px 0; }
         
         ul, ol { 
-            margin: 1px 0 2px 0; 
+            margin: 1px 0 1.5px 0; 
             padding-left: 10px; 
             list-style-type: square; 
         }
         
-        li { 
-            margin-bottom: 1px; 
-        }
+        li { margin-bottom: 0.5px; }
         
         .bold { font-weight: bold; }
         .italic { font-style: italic; }
-        .highlight { background-color: #fff9c4; } 
+        .highlight { background-color: #fff9c4 !important; } /* Forced highlight color */
 
         /* Print overrides */
         @media print {
             @page { size: letter portrait; margin: 0; }
             body { background-color: white; padding: 0; display: block; }
-            .page { box-shadow: none; width: 100%; height: 100%; padding: 0.25in; }
+            .page { box-shadow: none; width: 100%; height: 100%; padding: 0.2in; }
         }
     </style>
 </head>
@@ -241,40 +242,4 @@
                 </p>
             </section>
 
-            <section id="change">
-                <h2>ORGANIZATIONAL CHANGE</h2>
-                <p><span class="bold">6 Forces for Change:</span> Nature of the workforce (diversity), Technology (faster/cheaper), Economic shocks, Competition (global rivals), Social trends (online shopping), World politics.</p>
-                <p><span class="bold">Change Agents:</span> Persons who act as catalysts and assume responsibility for managing change activities (can be managers, employees, or outside consultants).</p>
-
-                <h3>Resistance to Change</h3>
-                <ul>
-                    <li><span class="bold">Individual Resistance:</span> Habit, Security (threat to safety), Economic factors (fear of lower pay), Fear of the unknown, Selective information processing (hearing what they want to hear).</li>
-                    <li><span class="bold">Organizational Resistance:</span> Structural inertia (built-in mechanisms keep things stable), Limited focus of change, Group inertia (group norms act as a constraint), Threat to expertise, Threat to established power relationships.</li>
-                </ul>
-
-                <h3>6 Tactics for Overcoming Resistance</h3>
-                <ul>
-                    <li><span class="italic">Education & Communication:</span> Fight misinformation.</li>
-                    <li><span class="italic">Participation:</span> It's hard for individuals to resist a change decision they helped create.</li>
-                    <li><span class="italic">Building Support & Commitment:</span> Counseling, new skills training.</li>
-                    <li><span class="italic">Implementing Changes Fairly:</span> Procedural fairness.</li>
-                    <li><span class="highlight">Manipulation & Cooptation:</span> Manipulation = twisting facts. Cooptation combines manipulation + participation (buying off the leaders of a resistance group to get their endorsement).</li>
-                    <li><span class="italic">Coercion:</span> Application of direct threats or force (last resort).</li>
-                </ul>
-
-                <h3>Lewin's 3-Step Change Model</h3>
-                <ol>
-                    <li><span class="bold">Unfreezing:</span> Overcoming the status quo by increasing <span class="italic">Driving Forces</span> (forces that direct behavior away from the status quo) and decreasing <span class="italic">Restraining Forces</span> (forces that hinder movement from existing equilibrium).</li>
-                    <li><span class="bold">Movement:</span> The actual shift/transition to the new state.</li>
-                    <li><span class="bold">Refreezing:</span> Stabilizing the change intervention by balancing driving and restraining forces so the organization doesn't revert back to old habits.</li>
-                </ol>
-
-                <p><span class="bold">Idea Champions (Innovation):</span> Individuals who take an innovation and actively/enthusiastically promote the idea, build support, overcome resistance, and ensure that the idea is implemented. <span class="italic">Key Traits:</span> Extremely high self-confidence, persistence, energy, and a tendency to take risks.</p>
-            </section>
-            
-        </div>
-    </div>
-</div>
-
-</body>
-</html>
+            <section id
