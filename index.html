@@ -8,10 +8,15 @@
         /* Print-specific layout */
         @page {
             size: letter portrait;
-            margin: 0.25in;
+            margin: 0.15in; /* Adjusted to guarantee 1-page fit */
         }
 
-        * { box-sizing: border-box; }
+        * { 
+            box-sizing: border-box; 
+            /* CRITICAL: Forces printer to keep background colors */
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
         
         body {
             background-color: #525659;
@@ -25,18 +30,18 @@
 
         /* The physical piece of 8.5x11 paper */
         .page {
-            background-color: white;
+            background-color: white !important;
             width: 8.5in;
             height: 11in;
-            padding: 0.25in;
+            padding: 0.15in;
             box-shadow: 0 5px 15px rgba(0,0,0,0.5);
-            overflow: hidden;
+            overflow: hidden; /* Prevents phantom 2nd page */
         }
 
         /* Text and Layout Styling */
         .page-content {
             font-size: 6.5pt; /* Ultra-dense base font */
-            line-height: 1.05;
+            line-height: 1.02; /* Tightened to ensure it fits on one page */
         }
         .header-title {
             text-align: center;
@@ -52,15 +57,16 @@
         .content-columns {
             column-count: 4; 
             column-gap: 0.15in; 
-            height: 10.4in; /* Forces columns to fill available height */
-            column-fill: auto; /* CRITICAL: Kills the giant white space gaps */
+            height: 10.3in; 
+            column-fill: auto; 
             text-align: left; 
         }
 
         /* Section & Element Styling */
         section {
             margin-bottom: 4px;
-            break-inside: avoid; /* Keeps sections grouped together safely now */
+            break-inside: avoid; 
+            page-break-inside: avoid;
         }
         
         h2, h3 {
@@ -70,8 +76,8 @@
 
         h2 {
             font-size: 7.5pt;
-            background: #222;
-            color: white;
+            background: #222 !important; /* Forced black for printing */
+            color: white !important;
             padding: 2px 3px;
             margin: 0 0 2px 0;
             text-align: center;
@@ -82,7 +88,7 @@
             font-size: 7pt;
             margin: 3px 0 1px 0;
             border-bottom: 1px solid #eee;
-            color: #b71c1c;
+            color: #b71c1c !important;
         }
         
         p { 
@@ -101,13 +107,13 @@
         
         .bold { font-weight: bold; }
         .italic { font-style: italic; }
-        .highlight { background-color: #fff9c4; } 
+        .highlight { background-color: #fff9c4 !important; } /* Forced yellow for printing */
 
         /* Print overrides */
         @media print {
             @page { size: letter portrait; margin: 0; }
-            body { background-color: white; padding: 0; display: block; }
-            .page { box-shadow: none; width: 100%; height: 100%; padding: 0.25in; }
+            body { background-color: white !important; padding: 0; display: block; }
+            .page { box-shadow: none; width: 100%; height: 100%; padding: 0.15in; margin: 0; }
         }
     </style>
 </head>
@@ -119,6 +125,7 @@
 
         <div class="content-columns">
             
+            <!-- ORG STRUCTURE -->
             <section id="structure">
                 <h2>ORG. STRUCTURE</h2>
                 <p><span class="bold">Organizational Structure:</span> How job tasks are formally divided, grouped, and coordinated.</p>
@@ -154,6 +161,7 @@
                 <p><span class="bold">Organic Model:</span> Synonymous with Boundaryless. Cross-functional teams, free flow of info, wide spans, decentralized, low formalization.</p>
             </section>
 
+            <!-- ORG CULTURE -->
             <section id="culture">
                 <h2>ORG. CULTURE</h2>
                 <p><span class="bold">Organizational Culture:</span> A system of shared meaning held by members that distinguishes the org from others. It is a <span class="italic">descriptive</span> term (how employees perceive it). <span class="bold">Job Satisfaction</span> is an <span class="italic">evaluative</span> term (how they feel about it).</p>
@@ -195,6 +203,7 @@
                 <p><span class="bold">Conditions for Cultural Change:</span> 1) A dramatic crisis exists. 2) Turnover in top leadership. 3) The organization is young and small. 4) The existing culture is weak.</p>
             </section>
 
+            <!-- POWER & POLITICS -->
             <section id="power">
                 <h2>POWER & POLITICS</h2>
                 <p><span class="bold">Power:</span> A capacity that A has to influence the behavior of B so that B acts in accordance with A's wishes. <span class="highlight">The key to power is DEPENDENCY.</span></p>
@@ -241,6 +250,7 @@
                 </p>
             </section>
 
+            <!-- ORG CHANGE -->
             <section id="change">
                 <h2>ORGANIZATIONAL CHANGE</h2>
                 <p><span class="bold">6 Forces for Change:</span> Nature of the workforce (diversity), Technology (faster/cheaper), Economic shocks, Competition (global rivals), Social trends (online shopping), World politics.</p>
