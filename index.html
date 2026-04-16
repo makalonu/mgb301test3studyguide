@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MGB 301 Test 3 Cheat Sheet - Max Density</title>
+    <style>
+        /* Print-specific layout */
+        @page {
+            size: letter portrait;
+            margin: 0.25in;
+        }
+
+        * { box-sizing: border-box; }
+        
+        body {
+            background-color: #525659;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+            margin: 0;
+            font-family: "Helvetica Neue", Arial, sans-serif;
+            color: #000;
+        }
+
+        /* The physical piece of 8.5x11 paper */
+        .page {
+            background-color: white;
+            width: 8.5in;
+            height: 11in;
+            padding: 0.25in;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+            overflow: hidden;
+        }
+
+        /* Text and Layout Styling */
+        .page-content {
+            font-size: 7pt; /* Base font */
+            line-height: 1.1;
+        }
+        .header-title {
+            text-align: center;
+            font-size: 11pt;
+            margin: 0 0 6px 0;
+            padding-bottom: 2px;
+            border-bottom: 1.5px solid #000;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+        
+        /* The Column Setup */
+        .content-columns {
+            column-count: 4; 
+            column-gap: 0.15in; 
+            height: 10.2in; /* Forces columns to fill available height before wrapping */
+        }
+
+        /* Section & Element Styling */
+        section {
+            margin-bottom: 4px;
+        }
+        
+        /* Stop headers from being stranded at the bottom of a column */
+        h2, h3 {
+            break-after: avoid;
+            page-break-after: avoid;
+        }
+
+        h2 {
+            font-size: 7.5pt;
+            background: #222;
+            color: white;
+            padding: 2px 3px;
+            margin: 0 0 3px 0;
+            text-align: center;
+            text-transform: uppercase;
+        }
+        
+        h3 {
+            font-size: 7pt;
+            margin: 3px 0 1px 0;
+            border-bottom: 1px solid #eee;
+            color: #b71c1c;
+        }
+        
+        p { 
+            margin: 1.5px 0; 
+            text-align: left; 
+        }
+        
+        ul { 
+            margin: 1px 0; 
+            padding-left: 12px; 
+            list-style-type: square; 
+            font-size: 6.5pt; /* Smaller font for lists to pack more info */
+        }
+        
+        li { 
+            margin-bottom: 1px; 
+        }
+        
+        .bold { font-weight: bold; }
+        .italic { font-style: italic; }
+        .highlight { background-color: #fff9c4; } 
+
+        /* Print overrides */
+        @media print {
+            @page { size: letter portrait; margin: 0; }
+            body { background-color: white; padding: 0; display: block; }
+            .page { box-shadow: none; width: 100%; height: 100%; padding: 0.25in; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="page">
+    <div class="page-content">
+        <div class="header-title">MGB 301: Test 3 Study Guide (Spring 2026)</div>
+
+        <div class="content-columns">
+            
+            <section id="structure">
+                <h2>ORG. STRUCTURE</h2>
+                <p><span class="bold">Structure:</span> How job tasks are formally divided, grouped, and coordinated.</p>
+                
+                <h3>Key Elements</h3>
+                <ul>
+                    <li><span class="bold">Work Specialization:</span> Division of labor. Efficient use of skills via repetition, but can lead to boredom, fatigue, and high turnover.</li>
+                    <li><span class="bold">Departmentalization:</span> Grouping jobs together.
+                        <br>- <span class="italic">Functional:</span> Groups similar specialties (efficiency).
+                        <br>- <span class="italic">Product:</span> Accountability for product performance.
+                        <br>- <span class="italic">Geography:</span> Best for scattered customers with localized needs.
+                        <br>- <span class="italic">Process & Customer:</span> Based on flow or specific client base.
+                    </li>
+                    <li><span class="bold">Chain of Command:</span> Unbroken line of authority. <span class="italic">Unity of Command:</span> A subordinate should have only ONE superior.</li>
+                    <li><span class="bold">Span of Control:</span> Number of subordinates a manager can efficiently direct. Wider = cheaper/faster but risks effectiveness. Narrow = costly, complex vertical comms.</li>
+                    <li><span class="bold">Centralization:</span> Decision-making concentrated at a single point (top). <span class="italic">Decentralized:</span> Pushed down to lower levels (faster, more input).</li>
+                    <li><span class="bold">Formalization:</span> Degree to which jobs are standardized. High = strict rules, explicit descriptions.</li>
+                </ul>
+
+                <h3>Organizational Designs</h3>
+                <ul>
+                    <li><span class="bold">Simple Structure:</span> Low departmentalization, wide span of control, centralized, little formalization. (Startups).</li>
+                    <li><span class="bold">Bureaucracy:</span> Highly routine tasks, strict rules, centralized authority, narrow span of control. (Efficient for standardized tasks).</li>
+                    <li><span class="bold">Matrix Structure:</span> Dual lines of authority (combines Functional & Product). <span class="highlight">Breaks the Unity of Command concept.</span></li>
+                </ul>
+
+                <h3>New Structural Options</h3>
+                <ul>
+                    <li><span class="bold">Virtual Structure:</span> Small core organization that outsources major business functions. Highly centralized, little/no departmentalization.</li>
+                    <li><span class="bold">Boundaryless Org:</span> Eliminates chain of command, has limitless spans of control, replaces departments with empowered teams.</li>
+                </ul>
+
+                <h3>Two Models of Design</h3>
+                <p><span class="bold">Mechanistic Model:</span> High specialization, rigid departmentalization, clear chain of command, narrow spans, centralized, high formalization (e.g., Bureaucracy).</p>
+                <p><span class="bold">Organic Model:</span> Cross-functional teams, free flow of info, wide spans, decentralized, low formalization (e.g., Boundaryless).</p>
+            </section>
+
+            <section id="culture">
+                <h2>ORG. CULTURE</h2>
+                <p><span class="bold">Culture:</span> A system of shared meaning held by members. It is a <span class="italic">descriptive</span> term (unlike job satisfaction, which is evaluative).</p>
+                
+                <h3>7 Characteristics</h3>
+                <ol style="margin: 1px 0; padding-left: 16px; font-size: 6.5pt;">
+                    <li>Innovation and Risk Taking</li>
+                    <li>Attention to Detail</li>
+                    <li>Outcome Orientation (Focus on results)</li>
+                    <li>People Orientation (Effect on people)</li>
+                    <li>Team Orientation (Work organized in teams)</li>
+                    <li>Aggressiveness (Competitive vs. easygoing)</li>
+                    <li>Stability (Status quo vs. growth)</li>
+                </ol>
+
+                <h3>Types & Functions</h3>
+                <ul>
+                    <li><span class="bold">Dominant Culture:</span> Expresses the core values shared by a majority.</li>
+                    <li><span class="bold">Subcultures:</span> Minicultures within an org, usually defined by department or geography.</li>
+                    <li><span class="bold">Strong Culture:</span> Core values are intensely held and widely shared. Creates high behavioral control and reduces turnover.</li>
+                    <li><span class="bold">Culture's Function:</span> Defines boundaries, conveys identity, facilitates commitment to something larger than self, enhances social stability, serves as a sense-making/control mechanism.</li>
+                    <li><span class="bold">Culture as a Liability:</span> Acts as a barrier to change, barrier to diversity, and barrier to acquisitions/mergers.</li>
+                </ul>
+
+                <h3>Sustaining Culture</h3>
+                <p><span class="bold">Creation:</span> Founders hire those who think like them, indoctrinate them, and act as role models.</p>
+                <p><span class="bold">Socialization Model:</span>
+                    <br>1. <span class="italic">Prearrival:</span> Learning that occurs before joining.
+                    <br>2. <span class="italic">Encounter:</span> Seeing what the org is really like; expectations vs. reality.
+                    <br>3. <span class="italic">Metamorphosis:</span> Adjusting to the work, group, and org norms.
+                </p>
+                <p><span class="bold">Conditions for Cultural Change:</span> Dramatic crisis, turnover in top leadership, young & small organization, weak existing culture.</p>
+            </section>
+
+            <section id="power">
+                <h2>POWER & POLITICS</h2>
+                <p><span class="bold">Power:</span> Capacity A has to influence B to act in accordance with A's wishes. <span class="highlight">The key to power is DEPENDENCY.</span></p>
+                <p><span class="bold">Leadership vs. Power:</span> Leadership requires goal congruence and focuses on downward influence. Power only requires dependence and is used in all directions.</p>
+                
+                <h3>Bases of Power</h3>
+                <p><span class="bold">Formal Power:</span> Based on position in org.</p>
+                <ul>
+                    <li><span class="italic">Coercive:</span> Based on fear of negative results.</li>
+                    <li><span class="italic">Reward:</span> Ability to distribute desired rewards.</li>
+                    <li><span class="italic">Legitimate:</span> Formal authority to control resources based on structural position.</li>
+                </ul>
+                <p><span class="bold">Personal Power (Most Effective):</span></p>
+                <ul>
+                    <li><span class="italic">Expert:</span> Influence wielded via expertise, special skills, or knowledge.</li>
+                    <li><span class="highlight">Referent:</span> Based on identification with a person who has desirable resources or traits (e.g., charisma, likability).</li>
+                </ul>
+
+                <h3>Influence Tactics</h3>
+                <ul>
+                    <li><span class="bold">Rational Persuasion:</span> Logical arguments/facts. <span class="highlight">The ONLY tactic effective across all organizational levels (especially upward).</span></li>
+                    <li><span class="bold">Inspirational Appeals:</span> Appealing to values/needs.</li>
+                    <li><span class="bold">Consultation:</span> Involving the target in the plan.</li>
+                    <li><span class="bold">Ingratiation:</span> Using flattery, praise, or friendly behavior prior to making a request.</li>
+                    <li><span class="bold">Exchange:</span> Rewarding target with benefits/favors.</li>
+                    <li><span class="bold">Personal Appeals:</span> Asking based on friendship.</li>
+                    <li><span class="bold">Coalitions:</span> Enlisting the aid of others to persuade.</li>
+                    <li><span class="bold">Legitimacy:</span> Relying on authority position.</li>
+                    <li><span class="bold">Pressure:</span> Using warnings, demands, threats.</li>
+                </ul>
+
+                <h3>Politics in Organizations</h3>
+                <p><span class="bold">Political Behavior:</span> Activities not required by one's formal role, but that influence the distribution of advantages/disadvantages within the org.</p>
+                <ul>
+                    <li><span class="italic">Legitimate:</span> Normal day-to-day politics (complaining, bypassing chain of command, forming coalitions).</li>
+                    <li><span class="italic">Illegitimate:</span> Violates implied rules (sabotage, whistle-blowing, symbolic protests).</li>
+                </ul>
+            </section>
+
+            <section id="change">
+                <h2>ORGANIZATIONAL CHANGE</h2>
+                <p><span class="bold">Forces for Change:</span> Nature of workforce (diversity), Technology, Economic shocks, Competition, Social trends, World politics.</p>
+                <p><span class="bold">Change Agents:</span> Persons who act as catalysts and assume responsibility for managing change activities.</p>
+
+                <h3>Resistance to Change</h3>
+                <ul>
+                    <li><span class="bold">Individual:</span> Habit, Security, Economic factors, Fear of the unknown, Selective info processing.</li>
+                    <li><span class="bold">Organizational:</span> Structural inertia (built-in mechanisms resist change), Limited focus of change, Group inertia, Threat to expertise, Threat to established power relationships.</li>
+                </ul>
+
+                <h3>Overcoming Resistance</h3>
+                <ul>
+                    <li><span class="italic">Education/Communication:</span> Fight misinformation.</li>
+                    <li><span class="italic">Participation:</span> Hard to resist a change you helped create.</li>
+                    <li><span class="italic">Support/Commitment:</span> Counseling, therapy, skills training.</li>
+                    <li><span class="italic">Fairness:</span> Implementing changes equitably.</li>
+                    <li><span class="italic">Manipulation & Cooptation:</span> Spinning the message or "buying off" the leaders of a resistance group.</li>
+                    <li><span class="italic">Coercion:</span> Direct threats or force (last resort).</li>
+                </ul>
+
+                <h3>Lewin's 3-Step Change Model</h3>
+                <ol style="margin: 1px 0; padding-left: 16px; font-size: 6.5pt;">
+                    <li><span class="bold">Unfreezing:</span> Overcoming the status quo by increasing <span class="italic">Driving Forces</span> (direct behavior away from status quo) and decreasing <span class="italic">Restraining Forces</span> (hinder movement).</li>
+                    <li><span class="bold">Movement:</span> Actual shift to the new state.</li>
+                    <li><span class="bold">Refreezing:</span> Stabilizing the change by balancing driving and restraining forces so the org doesn't revert.</li>
+                </ol>
+
+                <h3>Innovation</h3>
+                <p><span class="bold">Idea Champions:</span> Individuals who actively and enthusiastically promote an idea, build support, overcome resistance, and ensure that the idea is implemented. (They usually possess high self-confidence, persistence, energy, and risk-taking traits).</p>
+            </section>
+            
+            <section id="rapid-recall">
+                <h2>RAPID RECALL (EXAM TIPS)</h2>
+                <ul>
+                    <li><span class="highlight">Rational Persuasion</span> is the best tactic for convincing your boss (upward influence).</li>
+                    <li><span class="highlight">Geography Departmentalization</span> is best when customers are scattered over large areas with similar localized needs.</li>
+                    <li><span class="highlight">Work Specialization</span> = most efficient use of employee skills via repetition.</li>
+                    <li><span class="highlight">Referent Power</span> = based on someone's desirable traits/charisma.</li>
+                    <li><span class="highlight">Ingratiation</span> = flattery BEFORE you ask for a favor.</li>
+                    <li><span class="bold">Matrix structures</span> purposely break the Unity of Command (you report to two bosses).</li>
+                </ul>
+            </section>
+            
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
