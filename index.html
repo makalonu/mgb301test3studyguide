@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MGB 301 Test 3 Cheat Sheet - Complete</title>
+    <title>MGB 301 Test 3 Cheat Sheet - Final Perfected</title>
     <style>
-        /* Print-specific layout */
-        @page { size: letter portrait; margin: 0.2in; }
+        /* Print-specific layout: Ultra-thin margins to fit exactly 1 page */
+        @page { size: letter portrait; margin: 0.15in; }
 
         * { 
             box-sizing: border-box; 
+            /* CRITICAL: Forces the browser to print black backgrounds & highlights */
             -webkit-print-color-adjust: exact !important;
             print-color-adjust: exact !important;
         }
@@ -28,15 +29,15 @@
         .page {
             background-color: white;
             width: 8.5in;
-            min-height: 11in;
-            padding: 0.2in;
+            height: 11in;
+            padding: 0.15in;
             box-shadow: 0 5px 15px rgba(0,0,0,0.5);
-            /* Removed overflow: hidden so content NEVER disappears */
+            overflow: hidden; /* Prevents phantom 2nd pages */
         }
 
         /* Text and Layout Styling */
         .page-content {
-            font-size: 6.5pt; 
+            font-size: 6.5pt; /* The perfect cheat sheet size */
             line-height: 1.05; 
         }
         
@@ -50,14 +51,19 @@
             font-weight: bold;
         }
         
-        /* The Column Setup */
+        /* The Column Setup - Natural Balance restored */
         .content-columns {
             column-count: 4; 
             column-gap: 0.15in; 
             text-align: left; 
         }
 
-        section { margin-bottom: 3px; }
+        /* Grouping rules */
+        section { 
+            margin-bottom: 3.5px; 
+            break-inside: avoid; /* Keeps sections together */
+            page-break-inside: avoid;
+        }
         
         h2, h3 {
             break-after: avoid;
@@ -66,8 +72,8 @@
 
         h2 {
             font-size: 7.5pt;
-            background: #222 !important; 
-            color: white !important; 
+            background: #222 !important; /* Forced background color */
+            color: white !important; /* Forced text color */
             padding: 2px 3px;
             margin: 0 0 2px 0;
             text-align: center;
@@ -78,7 +84,7 @@
             font-size: 7pt;
             margin: 2px 0 1px 0;
             border-bottom: 1px solid #eee;
-            color: #b71c1c !important; 
+            color: #b71c1c !important; /* Forced text color */
         }
         
         p { margin: 1px 0 1.5px 0; }
@@ -95,11 +101,11 @@
         i { font-style: italic; }
         mark { background-color: #fff9c4 !important; color: #000; padding: 0 1px; } 
 
-        /* Print overrides */
+        /* Print overrides to clear the gray screen background */
         @media print {
             @page { size: letter portrait; margin: 0; }
             body { background-color: white; padding: 0; display: block; }
-            .page { box-shadow: none; width: 100%; height: 100%; padding: 0.2in; margin: 0; }
+            .page { box-shadow: none; width: 100%; height: 100%; padding: 0.15in; margin: 0; }
         }
     </style>
 </head>
@@ -119,36 +125,36 @@
                 <ul>
                     <li><b>1. Work Specialization:</b> Degree to which tasks are subdivided into separate jobs. <i>Pros:</i> Efficient use of skills via repetition. <i>Cons:</i> Human diseconomies (boredom, fatigue, stress, high turnover) if taken too far.</li>
                     <li><b>2. Departmentalization:</b> Basis by which jobs are grouped.
-                        <br>- <i>Functional:</i> Grouped by functions performed (efficiencies).
+                        <br>- <i>Functional:</i> Grouped by functions performed (efficiencies/cost saving).
                         <br>- <i>Product:</i> Grouped by product line (increases accountability).
-                        <br>- <i>Geography:</i> Grouped by territory (<mark>Best for scattered customers with localized needs</mark>).
+                        <br>- <i>Geography:</i> Grouped by territory (<mark>Best for scattered customers with similar localized needs</mark>).
                         <br>- <i>Process/Customer:</i> Grouped by product flow or specific client base.
                     </li>
-                    <li><b>3. Chain of Command:</b> Unbroken line of authority extending from top to bottom. <i>Authority:</i> Right of a manager to give orders. <i>Unity of Command:</i> Subordinates should have <mark>only ONE superior</mark> to whom they report.</li>
-                    <li><b>4. Span of Control:</b> Number of subordinates a manager can direct. <i>Wider:</i> Cheaper, faster decisions, empowers workers. <i>Narrow:</i> Better control, but expensive and complicates vertical comms.</li>
-                    <li><b>5. Centralization:</b> Decision-making concentrated at top. <b>Decentralized:</b> Decision-making pushed down to managers closest to the action. (<mark>Locos Tacos example</mark>). Results in faster action and higher morale.</li>
-                    <li><b>6. Formalization:</b> Degree jobs are standardized. <i>High:</i> Strict rules. <i>Low:</i> High employee discretion.</li>
+                    <li><b>3. Chain of Command:</b> Unbroken line of authority extending from top to bottom. <i>Authority:</i> Right of a manager to give orders. <i>Unity of Command:</i> A subordinate should have <mark>only ONE superior</mark> to whom they report.</li>
+                    <li><b>4. Span of Control:</b> Number of subordinates a manager can direct. <i>Wider:</i> Cheaper, faster decisions, empowers workers. <i>Narrow:</i> Better control, but expensive and complicates vertical communication.</li>
+                    <li><b>5. Centralization:</b> Decision-making is concentrated at top managers. <b>Decentralized:</b> Decision-making pushed down to managers closest to the action. (<mark>e.g., Locos Tacos example</mark>). Results in faster action, more input, and higher morale.</li>
+                    <li><b>6. Formalization:</b> Degree to which jobs are standardized. <i>High:</i> Strict rules, explicit job descriptions. <i>Low:</i> High employee discretion.</li>
                 </ul>
 
                 <h3>Common Organizational Designs</h3>
                 <ul>
-                    <li><b>Simple Structure:</b> Low departmentalization, wide spans, centralized, little formalization. (Startups. <i>Risk:</i> Inadequate as org grows).</li>
-                    <li><b>Bureaucracy (Weber):</b> Routine operating tasks via specialization, formalized rules, centralized, narrow spans. (<i>Pros:</i> Efficient. <i>Cons:</i> Obsessive concern with rules, silos).</li>
-                    <li><b>Matrix Structure:</b> Combines Functional and Product departmentalization. <mark>Breaks Unity of Command</mark> (2 bosses). (<i>Risk:</i> Power struggles).</li>
+                    <li><b>Simple Structure:</b> Low departmentalization, wide spans, centralized in a single person, little formalization. (Startups. <i>Risk:</i> Inadequate as org grows; risky if reliant on one person).</li>
+                    <li><b>Bureaucracy (Max Weber):</b> Highly routine operating tasks achieved through specialization, formalized rules, centralized, narrow spans. (<i>Pros:</i> Efficient for standardized tasks. <i>Cons:</i> Obsessive concern with rules, "silo" mentality).</li>
+                    <li><b>Matrix Structure:</b> Combines Functional and Product departmentalization. <mark>Purposely breaks Unity of Command</mark> (2 bosses). (<i>Risk:</i> Power struggles, role confusion).</li>
                 </ul>
 
                 <h3>New Structural Options & Models</h3>
                 <ul>
-                    <li><b>Virtual Structure:</b> Small core org that outsources major business functions. Highly centralized, little/no departmentalization.</li>
-                    <li><b>Boundaryless Org (Welch/GE):</b> Eliminates chain of command, limitless spans of control, replaces departments with empowered teams.</li>
+                    <li><b>Virtual Structure:</b> Small core org that outsources major business functions. Highly centralized, little/no departmentalization. Provides max flexibility.</li>
+                    <li><b>Boundaryless Org (Jack Welch/GE):</b> Eliminates the chain of command, limitless spans of control, replaces departments with empowered teams.</li>
                 </ul>
-                <p><b>Mechanistic Model:</b> Synonymous with Bureaucracy. High specialization, rigid, clear chain, narrow spans, centralized, high formalization.</p>
+                <p><b>Mechanistic Model:</b> Synonymous with Bureaucracy. High specialization, rigid departmentalization, clear chain, narrow spans, centralized, high formalization.</p>
                 <p><b>Organic Model:</b> Synonymous with Boundaryless. Cross-functional teams, free flow of info, wide spans, decentralized, low formalization.</p>
             </section>
 
             <section id="culture">
                 <h2>ORG. CULTURE</h2>
-                <p><b>Culture:</b> System of shared meaning held by members. It is a <i>descriptive</i> term (how employees perceive it). <b>Job Satisfaction</b> is an <i>evaluative</i> term.</p>
+                <p><b>Organizational Culture:</b> System of shared meaning held by members. It is a <i>descriptive</i> term (how employees perceive it). <b>Job Satisfaction</b> is an <i>evaluative</i> term.</p>
                 <p><b>Org vs National Culture:</b> <mark>National culture has a GREATER impact on employees than their organization's culture.</mark></p>
                 
                 <h3>7 Primary Characteristics</h3>
@@ -156,19 +162,19 @@
                     <li><b>Innovation & Risk Taking:</b> Degree employees are encouraged to be innovative.</li>
                     <li><b>Attention to Detail:</b> Expectation of precision/analysis.</li>
                     <li><b>Outcome Orientation:</b> Focus on results/ends rather than techniques.</li>
-                    <li><b>People Orientation:</b> Decisions factor in effect on people.</li>
+                    <li><b>People Orientation:</b> Decisions factor in the effect on people.</li>
                     <li><b>Team Orientation:</b> Work organized around teams.</li>
-                    <li><b>Aggressiveness:</b> People are competitive vs easygoing.</li>
+                    <li><b>Aggressiveness:</b> People are competitive rather than easygoing.</li>
                     <li><b>Stability:</b> Emphasize maintaining status quo vs growth.</li>
                 </ol>
 
                 <h3>Types & Functions of Culture</h3>
                 <ul>
-                    <li><b>Dominant Culture:</b> Core values shared by majority.</li>
+                    <li><b>Dominant Culture:</b> Core values shared by a majority.</li>
                     <li><b>Subcultures:</b> Minicultures defined by dept/geography.</li>
                     <li><b>Strong Culture:</b> Core values intensely held/widely shared. Acts as substitute for formalization; high behavioral control; reduces turnover.</li>
-                    <li><b>Culture's Functions:</b> 1) Boundary-defining. 2) Conveys identity. 3) Facilitates commitment. 4) Enhances social stability. 5) Sense-making/control mechanism.</li>
-                    <li><b>Liability:</b> Barrier to Change, Diversity, and M&A.</li>
+                    <li><b>Culture's Functions:</b> 1) Boundary-defining. 2) Conveys identity. 3) Facilitates commitment to something larger. 4) Enhances social stability. 5) Sense-making/control mechanism.</li>
+                    <li><b>Liability:</b> Acts as a Barrier to Change, Diversity, and M&A.</li>
                 </ul>
 
                 <h3>Creating & Sustaining Culture</h3>
@@ -181,7 +187,7 @@
                 </p>
                 <p><b>The Socialization Model (3 Stages):</b>
                     <br>1. <i>Prearrival:</i> Learning that occurs before joining.
-                    <br>2. <i>Encounter:</i> New employee sees what org is really like (expectations clash with reality).
+                    <br>2. <i>Encounter:</i> New employee sees what the org is really like (expectations clash with reality).
                     <br>3. <i>Metamorphosis:</i> Employee adjusts to work and norms.
                 </p>
                 <p><b>Conditions for Cultural Change:</b> 1) Dramatic crisis exists. 2) Turnover in top leadership. 3) Org is young/small. 4) Existing culture is weak.</p>
@@ -273,7 +279,6 @@
                     <li><b>Substitution</b> is NOT an influence tactic.</li>
                     <li><b>Cooptation</b> combines manipulation and participation.</li>
                     <li><b>Locos Tacos Example:</b> Pushing decision-making down to store managers = <mark>Decentralization</mark>.</li>
-                    <li><b>Mechanistic</b> = Bureaucracy. <b>Organic</b> = Boundaryless.</li>
                 </ul>
             </section>
             
