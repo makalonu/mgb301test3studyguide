@@ -40,7 +40,7 @@
 
         /* Text and Layout Styling */
         .page-content {
-            font-size: 6.5pt; /* Ultra-dense base font */
+            font-size: 6.2pt; /* Ultra-dense base font adjusted to fit Rapid Recall */
             line-height: 1.02; /* Tightened to ensure it fits on one page */
         }
         .header-title {
@@ -57,7 +57,7 @@
         .content-columns {
             column-count: 4; 
             column-gap: 0.15in; 
-            height: 10.3in; 
+            height: 10.5in; /* Expanded slightly to fill the page to the bottom */
             column-fill: auto; 
             text-align: left; 
         }
@@ -82,6 +82,8 @@
             margin: 0 0 2px 0;
             text-align: center;
             text-transform: uppercase;
+            -webkit-print-color-adjust: exact !important; /* Double-enforced for print */
+            print-color-adjust: exact !important;
         }
         
         h3 {
@@ -107,7 +109,11 @@
         
         .bold { font-weight: bold; }
         .italic { font-style: italic; }
-        .highlight { background-color: #fff9c4 !important; } /* Forced yellow for printing */
+        .highlight { 
+            background-color: #fff9c4 !important; /* Forced yellow for printing */
+            -webkit-print-color-adjust: exact !important; 
+            print-color-adjust: exact !important;
+        } 
 
         /* Print overrides */
         @media print {
@@ -280,6 +286,21 @@
                 </ol>
 
                 <p><span class="bold">Idea Champions (Innovation):</span> Individuals who take an innovation and actively/enthusiastically promote the idea, build support, overcome resistance, and ensure that the idea is implemented. <span class="italic">Key Traits:</span> Extremely high self-confidence, persistence, energy, and a tendency to take risks.</p>
+            </section>
+            
+            <!-- RAPID RECALL -->
+            <section id="rapid-recall">
+                <h2>RAPID RECALL (TEST HITS)</h2>
+                <ul>
+                    <li><span class="highlight">Rational Persuasion</span> = Best for upward influence (boss).</li>
+                    <li><span class="highlight">Geography Dept.</span> = Best for scattered customers.</li>
+                    <li><span class="highlight">Work Specialization</span> = Efficient use of skills via repetition.</li>
+                    <li><span class="highlight">Referent Power</span> = Based on desirable traits/charisma.</li>
+                    <li><span class="highlight">Ingratiation</span> = Flattery BEFORE asking for a favor.</li>
+                    <li><span class="bold">Matrix structures</span> purposely break Unity of Command.</li>
+                    <li><span class="bold">Substitution</span> is NOT an influence tactic.</li>
+                    <li><span class="bold">Locos Tacos Example:</span> Pushing decision-making down = <span class="highlight">Decentralization</span>.</li>
+                </ul>
             </section>
             
         </div>
